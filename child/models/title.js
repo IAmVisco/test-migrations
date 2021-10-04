@@ -8,7 +8,9 @@ class Title {
         id: {
           primaryKey: true,
           type: DataTypes.UUID,
-          defaultValue: Sequelize.UUIDV4,
+          // defaultValue: undefined, // Fails to create as PK is null
+          defaultValue: Sequelize.UUIDV4, // Throws error: invalid input syntax for type uuid: "{}"
+          // defaultValue: Sequelize.literal('uuid_generate_v4()'), // Throws error: invalid input syntax for type uuid: "{"val":"uuid_generate_v4()"}"
         },
         title: {
           allowNull: false,

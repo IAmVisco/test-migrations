@@ -9,10 +9,7 @@ module.exports = {
         id: {
           primaryKey: true,
           type: DataTypes.UUID,
-          // None of 3 below work
-          // defaultValue: undefined,
-          // defaultValue: Sequelize.UUIDV4,
-          // defaultValue: Sequelize.literal('uuid_generate_v4()'),
+          defaultValue: Sequelize.UUIDV4,
         },
         title: {
           allowNull: false,
